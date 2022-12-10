@@ -1,0 +1,10 @@
+docker build -t ecom-docker-image .
+
+docker run --name ecom-container -it --rm ecom-docker-image
+
+docker run --name ecom-container -it --rm -p 3000:3000  ecom-docker-image
+
+
+docker run --name ecom-container -it --rm -p 3000:3000  -v $(pwd):/app ecom-docker-image
+
+docker run --name ecom-container  -d --rm -p 3000:3000  -v $(pwd):/app ecom-docker-image
